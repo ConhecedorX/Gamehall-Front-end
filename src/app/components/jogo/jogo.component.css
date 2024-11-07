@@ -1,0 +1,31 @@
+.jogo {
+    display: flex;
+    position: relative;
+    background-size: cover;
+    background-color: rgb(45, 38, 46);
+    background-position: center;
+    height: 100%; 
+    width: 100%;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.navBar{
+    position: relative;
+}
+
+.conteudo {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    position: relative;
+    z-index: 2;
+    border-radius: 5px;
+    background-color: rgb(45, 38, 46);
+    width: 100%;
+}
+
+.texto {
+    color: #fff;
+    padding: 10px;
+}

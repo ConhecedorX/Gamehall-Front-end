@@ -1,0 +1,62 @@
+<div class="painelGrande">
+  
+    <nav class="navMenu">
+      <div class="radio-container">
+        <input checked="" id="radio-açao" name="radio" type="radio" />
+        <label (click)="scrollTo('section1')" for="radio-açao">Ação</label>
+        
+        <input id="radio-luta" name="radio" type="radio" />
+        <label (click)="scrollTo('section2')" for="radio-luta">Luta</label>
+
+        <input id="radio-rpg" name="radio" type="radio" />
+        <label (click)="scrollTo('section3')" for="radio-rpg">RPG</label>
+        
+        <input id="radio-shooter" name="radio" type="radio" />
+        <label (click)="scrollTo('section4')" for="radio-shooter">Shooter</label>
+        
+        <input id="radio-terror" name="radio" type="radio" />
+        <label (click)="scrollTo('section5')" for="radio-terror">Terror</label>
+
+
+
+
+        <div class="glider-container">
+          <div class="glider"></div>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="colunas">
+
+      <div class="barra"></div>
+
+      <ul #scrollbar class="scrollbar" >
+        
+        <div #section1 id="section1" class="section">
+          <h1 class="titulo">Ação</h1>
+          <app-coluna-paineis class="Categoria"></app-coluna-paineis>
+        </div>
+        <div #section2 id="section2" class="section">
+          <h1 class="titulo">Luta</h1>
+          <app-coluna-paineis class="Categoria"></app-coluna-paineis>
+        </div>
+        <div #section3 id="section3" class="section">
+          <h1 class="titulo">RPG</h1>
+          <app-coluna-paineis class="Categoria"></app-coluna-paineis>
+        </div>
+        <div #section4 id="section4" class="section">
+          <h1 class="titulo">Shooter</h1>
+          <app-coluna-paineis class="Categoria"></app-coluna-paineis>
+        </div>
+        <div #section5 id="section5" class="section">
+          <h1 class="titulo">Terror</h1>
+          <app-coluna-paineis class="Categoria"></app-coluna-paineis>
+        </div>
+        
+      </ul>
+
+    </div>
+      
+  </div>
+  

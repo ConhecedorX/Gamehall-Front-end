@@ -1,0 +1,58 @@
+.navBar{
+  display:flex;
+  width: 100%;
+  top: 100%;
+  justify-content: space-between;
+  align-items: top;
+  flex-direction: column;
+  
+}
+
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 940px; /* Adjust based on your design */
+    background-size: cover;
+    background-position: top;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.10);
+  }
+  
+  .botao {
+    top: 50%;
+    height:100%;
+    font-size:75px;
+    background-color: rgba(255, 255, 255, 0.0);
+    color: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    
+  }
+
+  .boboes{
+    display: flex;
+    flex-direction: row;
+    align-items: center ;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+
+  }
+
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.10);
+    color:rgb(255, 255, 255, 0.5);
+  }
+
+  
+  .grupoMini {
+    display:flex;
+    flex-direction: row;
+  }
+  .miniCarroussel{
+    padding: 50px;
+  }

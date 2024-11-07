@@ -1,0 +1,7 @@
+.coluna {
+    flex-direction: row;
+    display:flex;
+    align-items: flex-end;
+    width: 100%;
+}
+
