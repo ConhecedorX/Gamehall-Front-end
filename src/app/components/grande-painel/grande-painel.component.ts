@@ -1,39 +1,40 @@
-import { Component, ElementRef, ViewChild, viewChild } from '@angular/core';
-import { MiniPainelComponent } from '../mini-painel/mini-painel.component';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ColunaPaineisComponent } from '../coluna-paineis/coluna-paineis.component';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-grande-painel',
   standalone: true,
-  imports: [ColunaPaineisComponent ],
+  imports: [ColunaPaineisComponent],
   templateUrl: './grande-painel.component.html',
-  styleUrl: './grande-painel.component.css'
+  styleUrls: ['./grande-painel.component.css']
 })
 export class GrandePainelComponent {
+  @ViewChild('scrollbar') scrollbar!: ElementRef;
   @ViewChild('section1') section1!: ElementRef;
   @ViewChild('section2') section2!: ElementRef;
   @ViewChild('section3') section3!: ElementRef;
   @ViewChild('section4') section4!: ElementRef;
   @ViewChild('section5') section5!: ElementRef;
-  
-  scrollTo(section: string){
-    switch(section) {
-      case 'section1':
-        this.section1.nativeElement.scrollIntoView({behavior:'smooth'});
-      break;
-      case 'section2':
-        this.section2.nativeElement.scrollIntoView({behavior:'smooth'});
-      break;
-      case 'section3':
-        this.section3.nativeElement.scrollIntoView({behavior:'smooth'});
-      break;
-      case 'section4':
-        this.section4.nativeElement.scrollIntoView({behavior:'smooth'});
-      break;
-      case 'section5':
-        this.section5.nativeElement.scrollIntoView({behavior:'smooth'});
-      break;
-    }
+
+  sectionsMap: { [key: string]: ElementRef } = {};
+
+  ngAfterViewInit() {
+    this.sectionsMap = {
+      section1: this.section1,
+      section2: this.section2,
+      section3: this.section3,
+      section4: this.section4,
+      section5: this.section5
+    };
+  }
+
+  scrollTo(section: string) {
+    const targetSection = this.sectionsMap[section].nativeElement;
+    const scrollbarContainer = this.scrollbar.nativeElement;
+
+    scrollbarContainer.scrollTo({
+      top: targetSection.offsetTop - scrollbarContainer.offsetTop,
+      behavior: 'smooth'
+    });
   }
 }

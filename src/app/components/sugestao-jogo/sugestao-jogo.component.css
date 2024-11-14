@@ -1,3 +1,45 @@
+
+.botoes {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Posiciona os botões nas extremidades */
+    align-items: center;
+    pointer-events: none; /* Evita interferência no scroll dos painéis */
+    
+}
+
+.botoes button {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    height: 95%;
+    width: 70px;
+    margin:0;
+    pointer-events: auto; /* Permite que os botões sejam clicáveis */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 10; /* Coloca os botões acima dos painéis */
+}
+
+.botoes button:hover {
+    background-color: rgba(88, 60, 107, 0.5);
+    color:rgb(255, 255, 255, 0.7);
+}
+
+.frente, .atras {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 46px; /* Ajuste o tamanho da seta se necessário */
+}
+
 .coluna{
     display: flex;
     flex-direction: row;
@@ -22,53 +64,17 @@
     margin-right:5px;
 }
 
-.botoes {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
+/* .coluna{
     display: flex;
-    justify-content: space-between; /* Posiciona os botões nas extremidades */
-    align-items: center;
-    pointer-events: none; /* Evita interferência no scroll dos painéis */
+    flex-direction: row;
+    max-width: 1830px;
+    }
     
-}
-
-.botoes button {
-    background-color: rgba(0, 0, 0, 0.15);
-    color: rgba(0, 0, 0, 0.5);
-    border: none;
-    cursor: pointer;
-    height: 110%;
-    width: 50px;
-    margin:0;
-    pointer-events: auto; /* Permite que os botões sejam clicáveis */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    z-index: 10; /* Coloca os botões acima dos painéis */
-}
-
-.botoes button:hover {
-    background-color: rgba(88, 60, 107, 0.5);
-    color:rgb(255, 255, 255, 0.7);
-  }
-
-.frente, .atras {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    font-size: 46px; /* Ajuste o tamanho da seta se necessário */
-}
-
-.atras {
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-}
-
-.frente {
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-}
+    .colunas {
+        display:flex;
+        flex-direction: row;
+        align-items: flex-end;
+        width: 100%;
+        overflow-x: hidden;
+    border-radius: 20px;
+} */

@@ -26,5 +26,5 @@ import { JogoComponent } from './components/jogo/jogo.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'front';
+  title = 'Gamehall';
 }

@@ -1,7 +1,7 @@
 .painel{
     position:relative;
-    height: 160px;
-    width:150px;
+    height: 150px;
+    width:220px;
     border-radius:20px;
     border: 3px solid #000000b7;
     background-color: #fff;
@@ -10,20 +10,19 @@
     text-align: center;
     padding: 2px;
     background-color: #674c77;
-    margin: 10px;
-    margin-top: 0px;
+    margin: 5px;
     transition: background-color 0.3s ease;
     overflow: hidden;
 }
 
 .sobrepor{
-    border-radius:16px;
+    border-radius:20px;
     position:absolute;
-    width: 140px;
-    height:151px;
+    width: 98%;
+    height: 98%;
     background-color: rgba(0, 10, 0, 0.5); /* Cor cinza com opacidade */
     color: white;
-    align-self:bottom;
+    align-self:center;
     transform:translateY(105%);
     transition: all 0.2s ease;
     display: flex;
@@ -31,19 +30,21 @@
     overflow: hidden;
     justify-content: center;
     margin-bottom:2px;
+    overflow: hidden;
 }
 
 img{
     height: 100%;
     width:100%;
-    border-radius:15px;
+    border-radius:20px;
     text-align: center;
 }
 
 .painel:hover{
-    filter: drop-shadow(0 0 0.75rem rgb(88, 56, 114));
+    filter: drop-shadow(0 0 0.5rem rgb(88, 56, 114));
     background-color: #9e38da;
-    /* z-index: 1; */
+    border-radius: 20px;
+    z-index: 1;
 }
 
 .painel:hover .sobrepor{

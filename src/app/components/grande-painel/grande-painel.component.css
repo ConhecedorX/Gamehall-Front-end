@@ -11,7 +11,10 @@
     font-size:0.9em;
     display:flex;
     flex-direction: column;
-    padding:7px;
+    padding-top:7px;
+    padding-bottom:7px;
+    padding-left: 0px;
+    padding-right: 0px;
     border: 2px solid #00000080;
     align-items: space-between;
 }
@@ -37,9 +40,9 @@
     display: flex;
     flex-direction: column;
     align-self: center;
-    border-radius: 50px;
+    border-radius: 1000px;
     height: 10px;
-    background-color: #fff;
+    background-color: rgb(26, 19, 29);
     width: 90%;
     margin-top: 30px;
     margin-bottom:20px;
@@ -49,6 +52,7 @@
     display:flex;
     flex-direction: column;
     width:80%;
+    height: 450px
 }
 
 .scrollbar{
@@ -57,9 +61,9 @@
     width:100%;
     padding: 30px;
     max-height: 875px;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x:hidden;
-    behavior: smooth;
+    scroll-behavior: smooth;
     align-self:flex-end;
 
 
@@ -84,13 +88,13 @@
 }
 
 .section {
-    behavior: smooth;
-
+    scroll-behavior: smooth;
 }
 
 .navMenu {
+    margin-top: 5%;
     display: flex;
-    align-items:center;
+    align-items: flex-start;
     width:20%;
 }
 

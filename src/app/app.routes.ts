@@ -5,6 +5,7 @@ import { AreaInicialComponent } from './components/area-inicial/area-inicial.com
 import { JogoComponent } from './components/jogo/jogo.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'inicio', component: AreaInicialComponent },
   { path: 'jogo', component: JogoComponent }

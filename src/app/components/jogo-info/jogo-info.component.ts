@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import Vibrant from 'node-vibrant';
-import { ColunaPaineisComponent } from '../coluna-paineis/coluna-paineis.component';
+// import Vibrant from 'node-vibrant';
 
 @Component({
   selector: 'app-jogo-info',
   standalone: true,
   imports: [
-    CommonModule, ColunaPaineisComponent
+    CommonModule
   ],
   templateUrl: './jogo-info.component.html',
   styleUrls: ['./jogo-info.component.css']

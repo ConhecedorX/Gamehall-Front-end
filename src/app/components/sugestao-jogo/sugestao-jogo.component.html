@@ -1,45 +1,45 @@
-<div class="colunas" >
+<div class="colunas">
     
     <div class="botoes">
-        <button (click)="scrollLeft()" class="atras">
+    <button (click)="previousColumn()" class="atras">
             <
         </button>
-
-        <button (click)="scrollRight()" class="frente">
+        <button (click)="nextColumn()" class="frente">
             >
         </button>
     </div>
-
+    
     <div class="colunaGeral" #colunaContainer id="colunaContainer">
-
-        <div class="coluna" #coluna id="coluna" >
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-        </div>
-
-        <div class="coluna" #coluna id="coluna" >
+        <div class="coluna" #coluna *ngFor="let column of columns" >
             <app-mini-painel> </app-mini-painel>
             <app-mini-painel > </app-mini-painel>
             <app-mini-painel > </app-mini-painel>
             <app-mini-painel > </app-mini-painel>
             <app-mini-painel > </app-mini-painel>
             <app-mini-painel > </app-mini-painel>
-        </div>
-
-        <div class="coluna" #coluna id="coluna" >
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
             <app-mini-painel > </app-mini-painel>
         </div>
-
+        <div class="coluna" #coluna *ngFor="let column of columns" >
+            <app-mini-painel > </app-mini-painel>
+            <app-mini-painel > </app-mini-painel>
+            <app-mini-painel > </app-mini-painel>
+            <app-mini-painel > </app-mini-painel>
+            <app-mini-painel > </app-mini-painel>
+            <app-mini-painel > </app-mini-painel>
+            <app-mini-painel > </app-mini-painel>
+        </div>
+        <div class="coluna" #coluna *ngFor="let column of columns" >
+            <app-mini-painel > </app-mini-painel>
+            <app-mini-painel > </app-mini-painel>
+            <app-mini-painel > </app-mini-painel>
+            <app-mini-painel > </app-mini-painel>
+            <app-mini-painel > </app-mini-painel>
+            <app-mini-painel > </app-mini-painel>
+            <app-mini-painel > </app-mini-painel>
+        </div>
     </div>
+
+
 
 </div>
 

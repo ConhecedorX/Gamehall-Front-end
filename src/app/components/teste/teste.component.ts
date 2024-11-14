@@ -5,7 +5,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-teste',
   standalone: true,
-  imports: [ RouterLink, RouterOutlet],
+  imports: [ RouterLink],
   templateUrl: './teste.component.html',
   styleUrl: './teste.component.css'
 })
