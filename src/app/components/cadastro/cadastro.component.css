@@ -1,9 +1,29 @@
 .cadastroPrincipal {
     display: flex;
-    height: 950px;
+    height: 100%;
     flex-direction: column;
-    justify-content: space-between;
     background-color: rgb(45, 38, 46)
+}
+
+header {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.jogoForms form{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 740px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 label{
@@ -14,13 +34,20 @@ label{
     display: flex;
     align-items: center;
     margin-right: 10px;
-    font-size: 2em;
+    margin-bottom: 0px;
+    font-size: 1em;
 }
 
 
 .notas {
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.notas label{
+  display: flex;
+  margin-top: 10px;
 }
 
 .rating{
@@ -37,7 +64,7 @@ label{
   .rating:not(:checked) > label {
     float: right;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 40px;
     fill: #666;
   }
   
@@ -61,5 +88,130 @@ label{
   
   .rating > input:checked ~ label > svg {
     fill: #ffa723; /* Set color for selected stars */
-  }
-  
+  } 
+
+.plataformas input[type="checkbox"] {
+  display: none;
+}
+.plataformas{
+  display: flex;
+  flex-direction: row;
+  height: 120px;
+  width: 1000px;
+  padding:10px;
+}
+
+.plataformas label {
+  position: relative;
+  cursor: pointer;
+}
+
+.switch svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+  z-index:1;
+}
+
+.xbox svg{
+  position: absolute;
+  top: 0;
+  left: 120px;
+  transition: opacity 0.5s ease;
+  z-index:1;
+}
+.playstation svg{
+  position: absolute;
+  top: 0;
+  left: 240px;
+  transition: opacity 0.5s ease;
+  z-index:1;
+}
+.computador svg{
+  position: absolute;
+  top: 0;
+  left: 360px;
+  transition: opacity 0.5s ease;
+  z-index:1;
+}
+
+.switch .icon-checked{
+  filter: drop-shadow(0 0 0.85rem rgb(255,69,84));
+}
+
+.xbox .icon-checked {
+  filter: drop-shadow(0 0 0.85rem rgb(44,162,67));
+}
+
+.playstation .icon-checked {
+  filter: drop-shadow(0 0 0.85rem rgb(46,109,180));
+}
+
+.computador .icon-checked{
+  filter: drop-shadow(0 0 0.85rem rgb(88, 56, 114));
+}
+
+.icon-checked {
+  opacity: 0;
+}
+
+
+.icon-unchecked {
+  opacity: 1;
+}
+
+.plataformas input[type="checkbox"]:checked + label .icon-checked {
+  opacity: 1;
+}
+
+.plataformas input[type="checkbox"]:checked + label .icon-unchecked {
+  opacity: 0;
+}
+
+.imagemUpload{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.imagemPreview {
+  width: 200px;
+  height: 200px;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: rgb(40, 30, 41);
+  border-radius: 10px;
+}
+
+.imagemPreview img {
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+
+
+.textos {
+  background-color: #3d2b42;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.textos input, textarea{
+  width:100%;
+  border-radius: 10px;
+  background-color: #29222cd3;
+  color: #ccc;
+}
+
+.textos input.dataText{
+  color: #ccc;
+  width: 50%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
