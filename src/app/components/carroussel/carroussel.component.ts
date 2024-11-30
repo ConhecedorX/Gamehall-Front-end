@@ -24,16 +24,22 @@ export class CarrousselComponent {
       this.jogos = jogos
     }
   )
-  console.log(this.jogos[0].jogoImagem)
+  console.log(this.jogos)
 }
 
 currentIndex: number = 0;
 
   images: string [] = [
-    `${this.jogos[5].jogoImagem}`,
-    `${this.jogos[2].jogoImagem}`,
-    `${this.jogos[4].jogoImagem}`,
-    `${this.jogos[1].jogoImagem}`,
+
+    "https://wallpapers.com/images/hd/red-dead-redemption-2-wallpaper-sfzd0d05qk6k0sja.jpg",
+    "https://virtualbackgrounds.site/wp-content/uploads/2020/11/the-witcher-3-wild-hunt-kaer-morhen.jpg",
+    "https://wallpaperset.com/w/full/0/9/1/209465.jpg",
+    "https://images4.alphacoders.com/655/655417.jpg"
+    
+    // `${this.jogos[5].jogoImagem}`,
+    // `${this.jogos[2].jogoImagem}`,
+    // `${this.jogos[4].jogoImagem}`,
+    // `${this.jogos[1].jogoImagem}`,
   ]
 
   getCurrentImageUrl(): string {
