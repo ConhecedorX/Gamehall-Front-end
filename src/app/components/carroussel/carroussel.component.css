@@ -55,3 +55,33 @@
   .miniCarroussel{
     padding: 50px;
   }
+
+
+  .paineis {
+    margin-right: 20px;
+    background-color: rgba(51, 43, 43, 0);
+}
+
+.painel{
+    height: 95px;
+    width:130px;
+    border-radius:20px;
+    border: 3px solid purple;
+    background-color: #fff;
+    padding: 2px;
+    margin-right:12px;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease;
+}
+
+img{
+    height: 100%;
+    width:100%;
+    border-radius:15px;
+}
+
+
+.painel:hover{
+    transform: scale(1.15);
+    z-index: 1;
+}

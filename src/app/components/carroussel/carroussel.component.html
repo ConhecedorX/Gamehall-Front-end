@@ -3,10 +3,6 @@
     <div class="navBar">
       <app-teste></app-teste>
     </div>
-
-    <div class="miniCarroussel">
-      
-    </div>
     
     <div class="boboes">
       <button (click)="previousImage()" class="botao">
@@ -17,7 +13,20 @@
       </button>
     </div>
     <div class="grupoMini">
-      <app-mini-carroussel></app-mini-carroussel>
+      <div class="paineis">
+        <button (click)="changeCurrentImageUrl(0)" class="painel">
+            <img src="../../../assets/imgs/image1.jpg" alt="...">
+        </button>
+        <button (click)="changeCurrentImageUrl(1)" class="painel">
+            <img src="../../../assets/imgs/image2.jpg" alt="...">
+        </button>
+        <button (click)="changeCurrentImageUrl(2)" class="painel">
+            <img src="../../../assets/imgs/image3.jpg" alt="...">
+        </button>
+        <button (click)="changeCurrentImageUrl(3)" class="painel">
+            <img src="../../../assets/imgs/image4.jpg" alt="...">
+        </button>
+    </div>
     </div>
     
   </div>
