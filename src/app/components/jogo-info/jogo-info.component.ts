@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { GameModel } from '../../models/game-model';
+import { GameServicesService } from '../../services/game-services.service';
 // import Vibrant from 'node-vibrant';
 
 @Component({
   selector: 'app-jogo-info',
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './jogo-info.component.html',
   styleUrls: ['./jogo-info.component.css']
@@ -14,7 +16,23 @@ import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 
 export class JogoInfoComponent{
 
+  constructor (private service: GameServicesService) {
+  }
+  
+  jogos: GameModel [] = []
+  ngOnInit(){
+    this.service.listarJogos().subscribe(jogos => {
+      this.jogos = jogos
+      }
+    )
+    console.log(this.jogos)
+  }
+
 }
+
+
+
+
 
 // export class JogoInfoComponent implements AfterViewInit {
 //   @ViewChild('imageRef') imageRef!: ElementRef<HTMLImageElement>;

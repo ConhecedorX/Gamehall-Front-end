@@ -95,10 +95,19 @@ label{
 }
 .plataformas{
   display: flex;
-  flex-direction: row;
-  height: 120px;
-  width: 1000px;
-  padding:10px;
+  flex-direction: column;
+  height: 45%;
+  width: 100%;
+  padding-top:55px;
+  padding-bottom:5px;
+}
+
+.icones {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+
 }
 
 .plataformas label {
@@ -108,30 +117,30 @@ label{
 
 .switch svg {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50px;
+  left: 50px;
   transition: opacity 0.3s ease;
   z-index:1;
 }
 
 .xbox svg{
   position: absolute;
-  top: 0;
-  left: 120px;
+  top: 50px;
+  left: 200px;
   transition: opacity 0.5s ease;
   z-index:1;
 }
 .playstation svg{
   position: absolute;
-  top: 0;
-  left: 240px;
+  top: 50px;
+  left: 350px;
   transition: opacity 0.5s ease;
   z-index:1;
 }
 .computador svg{
   position: absolute;
-  top: 0;
-  left: 360px;
+  top: 50px;
+  left: 500px;
   transition: opacity 0.5s ease;
   z-index:1;
 }
@@ -172,15 +181,17 @@ label{
 .imagemUpload{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
 }
 
 .imagemPreview {
-  width: 200px;
-  height: 200px;
-  border: 2px dashed #ccc;
+  width: 640px;
+  height: 360px;
+  border: 2px dashed #403a44;
   display: flex;
+  flex-direction: row-reverse;
+  position: relative;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -194,8 +205,47 @@ label{
   object-fit: cover;
 }
 
+.botaoImagem {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
 
-.textos {
+.upload-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Ajuste o tamanho do botão */
+  height: 50px;
+  background-color: #6a1b9a; /* Cor de fundo */
+  color: #fff; /* Cor do símbolo "+" */
+  font-size: 24px; /* Tamanho do símbolo "+" */
+  border: none;
+  border-radius: 50%; /* Torna o botão circular */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.upload-btn:hover {
+  background-color: #8e24aa; /* Cor ao passar o mouse */
+  transform: scale(1.1); /* Aumenta o botão ligeiramente */
+}
+
+.upload-btn:active {
+  background-color: #4a148c; /* Cor ao clicar */
+}
+
+.upload-btn input[type="file"] {
+  display: none; /* Esconde o botão padrão do navegador */
+}
+
+
+.plataformasGeral span {
+  color: #ccc;
+}
+
+.textos, .plataformasGeral, .categorias {
   background-color: #3d2b42;
   padding: 15px;
   border-radius: 10px;
@@ -213,5 +263,122 @@ label{
   width: 50%;
   padding-left: 5px;
   padding-right: 5px;
+}
+
+.categorias{
+  height: 80%;
+  width: 30%;
+}
+
+.painelCategorias {
+  height: 75%;
+  width: 100%;
+  background-color: #29222cd3;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.painelCategorias input {
+  width: 100%;
+  border-radius: 5px;
+  color: #4a148c;
+}
+
+.dropdown {
+  background-color: #29222cd3;
+  border-radius: 5px;
+  list-style: none;
+  position: absolute;
+  margin: 5px 0 5px;
+  padding: 10px;
+  width: 97%;
+  z-index: 1;
+  max-height: 150px;
+  overflow-y: scroll;
+}
+
+.dropdown li {
+  padding: 8px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.dropdown li:hover {
+  background-color: #403a44;
+}
+
+.tagsCategorias {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag {
+  font-size: 16px;
+  background-color: #6a1b9a;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tag button {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.final {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 5px;
+  width: 100%;
+  height: 15%;
+}
+
+.final input{
+  font-size: x-large;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #8e24aa;
+}
+
+.final input {
+  padding: 10px 20px;
+  border: none;
+  font-size: 17px;
+  color: #fff;
+  border-radius: 7px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  transition-property: box-shadow;
+}
+
+.final input {
+  background: rgb(139, 9, 199);
+  box-shadow: 0 0 25px rgb(139, 9, 199);
+}
+
+.final input:hover {
+  box-shadow: 0 0 10px rgb(139, 9, 199),
+              0 0 10px rgb(139, 9, 199),
+              0 0 20px rgb(139, 9, 199),
+              0 0 35px rgb(139, 9, 199);
 }
 
