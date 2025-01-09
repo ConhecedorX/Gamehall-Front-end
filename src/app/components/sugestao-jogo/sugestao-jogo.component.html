@@ -1,41 +1,20 @@
 <div class="colunas">
     
+    
     <div class="botoes">
-    <button (click)="previousColumn()" class="atras">
+    <button (click)="scrollLeft()" class="atras">
             <
         </button>
-        <button (click)="nextColumn()" class="frente">
+        <button (click)="scrollRight()" class="frente">
             >
         </button>
     </div>
     
     <div class="colunaGeral" #colunaContainer id="colunaContainer">
-        <div class="coluna" #coluna *ngFor="let column of columns" >
-            <app-mini-painel> </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-        </div>
-        <div class="coluna" #coluna *ngFor="let column of columns" >
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-        </div>
-        <div class="coluna" #coluna *ngFor="let column of columns" >
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
+        <div class="coluna" #coluna *ngFor="let grupo of grupoJogos" >
+            <app-mini-painel
+                *ngFor="let jogo of grupo"
+                [jogo]="jogo"> </app-mini-painel>
         </div>
     </div>
 

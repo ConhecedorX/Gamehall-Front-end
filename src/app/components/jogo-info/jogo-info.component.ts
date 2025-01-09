@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { GameModel } from '../../models/game-model';
 import { GameServicesService } from '../../services/game-services.service';
 // import Vibrant from 'node-vibrant';
@@ -16,16 +16,12 @@ import { GameServicesService } from '../../services/game-services.service';
 
 export class JogoInfoComponent{
 
+  @Input() jogo!: GameModel
+
   constructor (private service: GameServicesService) {
   }
-  
-  jogos: GameModel [] = []
-  ngOnInit(){
-    this.service.listarJogos().subscribe(jogos => {
-      this.jogos = jogos
-      }
-    )
-    console.log(this.jogos)
+  ngOnInit(): void{
+    // console.log('Jogo específico recebido no filho:', this.jogo)
   }
 
 }

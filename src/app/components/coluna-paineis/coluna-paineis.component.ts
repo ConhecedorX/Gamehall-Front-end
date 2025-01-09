@@ -1,6 +1,8 @@
-import { Component, ElementRef, ViewChild, ViewChildren, QueryList } from '@angular/core';
+import { Component, ElementRef, ViewChild, ViewChildren, QueryList, Input } from '@angular/core';
 import { MiniPainelComponent } from '../mini-painel/mini-painel.component';
 import { CommonModule } from '@angular/common';
+import { GameModel } from '../../models/game-model';
+import { GrandePainelComponent } from '../grande-painel/grande-painel.component';
 
 @Component({
   selector: 'app-coluna-paineis',
@@ -11,14 +13,28 @@ import { CommonModule } from '@angular/common';
 })
 
 export class ColunaPaineisComponent {
+
+  @Input() jogosPaineis: GameModel [] = [];
+  grupoJogos: GameModel [][] = [];
+
   @ViewChild('colunaContainer') colunaContainer!: ElementRef;
 
   scrollAmount: number = 1460;
+
+  ngOnChanges(): void {
+     this.grupoJogos = [];
+     for (let i = 0; i < this.jogosPaineis.length; i += 6) {
+      this.grupoJogos.push(this.jogosPaineis.slice(i, i + 6));
+     }
+      // console.log('Jogos recebidos:', this.jogosPaineis);
+      // console.log('Grupo de Jogos:', this.grupoJogos);
+  }
 
   scrollRight(): void {
     if (this.colunaContainer) {
       this.colunaContainer.nativeElement.scrollLeft += this.scrollAmount;
     }
+    
   }
 
   scrollLeft(): void {
@@ -27,34 +43,3 @@ export class ColunaPaineisComponent {
     }
   }
 }
-
-
-
-// export class ColunaPaineisComponent {
-//   currentColumn: number = 0;
-
-//   columns: string[] = [
-//     "coluna1",
-//     "coluna2",
-//     "coluna3"
-//   ];
-
-//   @ViewChildren('coluna') colunas!: QueryList<ElementRef>;
-
-//   nextColumn(): void {
-//     this.currentColumn = (this.currentColumn + 1) % this.columns.length;
-//     this.scrollToCurrentColumn();
-//   }
-
-//   previousColumn(): void {
-//     this.currentColumn = (this.currentColumn - 1 + this.columns.length) % this.columns.length;
-//     this.scrollToCurrentColumn();
-//   }
-
-//   private scrollToCurrentColumn(): void {
-//     const coluna = this.colunas.toArray()[this.currentColumn];
-//     if (coluna) {
-//       coluna.nativeElement.scrollIntoView({ behavior: 'smooth' });
-//     }
-//   }
-// }

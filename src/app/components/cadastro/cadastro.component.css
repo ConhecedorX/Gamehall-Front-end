@@ -90,7 +90,7 @@ label{
     fill: #ffa723; /* Set color for selected stars */
   } 
 
-.plataformas input[type="checkbox"] {
+.plataformas input[type="radio"] {
   display: none;
 }
 .plataformas{
@@ -158,7 +158,7 @@ label{
 }
 
 .computador .icon-checked{
-  filter: drop-shadow(0 0 0.85rem rgb(88, 56, 114));
+  filter: drop-shadow(0 0 1rem rgb(88, 56, 114));
 }
 
 .icon-checked {
@@ -170,11 +170,11 @@ label{
   opacity: 1;
 }
 
-.plataformas input[type="checkbox"]:checked + label .icon-checked {
+.plataformas input[type="radio"]:checked + label .icon-checked {
   opacity: 1;
 }
 
-.plataformas input[type="checkbox"]:checked + label .icon-unchecked {
+.plataformas input[type="radio"]:checked + label .icon-unchecked {
   opacity: 0;
 }
 
@@ -183,6 +183,29 @@ label{
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+}
+
+.linhaUrl{
+  display: flex;
+  width: 100%;
+}
+
+.urlJogo {
+  display: flex;
+  width: 60%;
+  margin-left: 10px;
+  border-radius: 10px;
+  background-color: #29222cd3;
+  color: #ccc;
+}
+
+.error-message {
+  position:absolute;
+  display: flex;
+  align-self:flex-start;
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .imagemPreview {
@@ -212,23 +235,26 @@ label{
 }
 
 .upload-btn {
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px; /* Ajuste o tamanho do botão */
-  height: 50px;
-  background-color: #6a1b9a; /* Cor de fundo */
-  color: #fff; /* Cor do símbolo "+" */
-  font-size: 24px; /* Tamanho do símbolo "+" */
+  width: 40px; /* Ajuste o tamanho do botão */
+  height: 40px;
+  background-color: #832cb9ab; /* Cor de fundo */
+  color: #bbadc4; /* Cor do símbolo "+" */
+  font-size: 20px; /* Tamanho do símbolo "X" */
   border: none;
   border-radius: 50%; /* Torna o botão circular */
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s, transform 0.2s;
+  top:7px;
+  right:7px;
 }
 
 .upload-btn:hover {
-  background-color: #8e24aa; /* Cor ao passar o mouse */
+  background-color: #832cb9; /* Cor ao passar o mouse */
   transform: scale(1.1); /* Aumenta o botão ligeiramente */
 }
 
@@ -382,3 +408,57 @@ label{
               0 0 35px rgb(139, 9, 199);
 }
 
+.overlay_success {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Escurecimento */
+  backdrop-filter: blur(5px); /* Blur */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.success_box {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1;
+}
+
+.success_box h2 {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.success_box button {
+  padding: 10px 20px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.success_box button:hover {
+  background: darkgreen;
+}
+
+.error {
+  display: flex;
+  color: red;
+  margin-top: 10px;
+  top: 5px;
+  font-size: 14px;
+  text-align: center;
+  background: #ffe6e6;
+  position:absolute;
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 5px;
+}

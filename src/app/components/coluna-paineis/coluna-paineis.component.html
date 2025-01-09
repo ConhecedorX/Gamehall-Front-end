@@ -10,36 +10,16 @@
         </button>
     </div>
 
-    <div class="colunaGeral" #colunaContainer id="colunaContainer">
-
-        <div class="coluna" #coluna id="coluna" >
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
+        <div class="colunaGeral" #colunaContainer id="colunaContainer">
+            <!-- Criação dinâmica das colunas -->
+            <div class="coluna" *ngFor="let grupo of grupoJogos">
+              <!-- Adicionar os jogos dinamicamente em cada coluna -->
+              <app-mini-painel 
+                *ngFor="let jogo of grupo"
+                [jogo]="jogo">
+              </app-mini-painel>
+            </div>
         </div>
-
-        <div class="coluna" #coluna id="coluna" >
-            <app-mini-painel> </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-        </div>
-
-        <div class="coluna" #coluna id="coluna" >
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-            <app-mini-painel > </app-mini-painel>
-        </div>
-
-    </div>
 
 </div>
 

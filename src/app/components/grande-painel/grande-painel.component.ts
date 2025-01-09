@@ -1,5 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ColunaPaineisComponent } from '../coluna-paineis/coluna-paineis.component';
+import { GameModel } from '../../models/game-model';
+import { GameServicesService } from '../../services/game-services.service';
+import { PLATFORM_ID, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-grande-painel',
@@ -9,6 +12,34 @@ import { ColunaPaineisComponent } from '../coluna-paineis/coluna-paineis.compone
   styleUrls: ['./grande-painel.component.css']
 })
 export class GrandePainelComponent {
+
+  constructor(private service: GameServicesService,
+    @Inject(PLATFORM_ID) private platformId: Object // Injetar a plataforma
+    ) {}
+
+  jogosPaineis: GameModel [] = []
+  jogosAcao: GameModel [] = []
+  jogosLuta: GameModel [] = []
+  jogosRpg: GameModel [] = []
+  jogosShooter: GameModel [] = []
+  jogosTerror: GameModel [] = []
+
+  ngOnInit() {
+    this.service.listarJogos().subscribe((data: GameModel[]) => {
+      this.jogosPaineis = data;
+
+    this.jogosAcao = this.jogosPaineis.filter(jogo => jogo.genero === 'ACAO');
+    this.jogosLuta = this.jogosPaineis.filter(jogo => jogo.genero === 'LUTA');
+    this.jogosRpg = this.jogosPaineis.filter(jogo => jogo.genero === 'RPG');
+    this.jogosShooter = this.jogosPaineis.filter(jogo => jogo.genero === 'SHOOTER');
+    this.jogosTerror = this.jogosPaineis.filter(jogo => jogo.genero === 'TERROR');
+
+    // console.log(this.jogosRpg);
+    })
+    
+  }
+
+
   @ViewChild('scrollbar') scrollbar!: ElementRef;
   @ViewChild('section1') section1!: ElementRef;
   @ViewChild('section2') section2!: ElementRef;

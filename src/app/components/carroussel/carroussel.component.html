@@ -5,53 +5,46 @@
     </div>
     
     <div class="boboes">
-      <button (click)="previousImage()" class="botao">
+      <button (click)="previousImageBtn()" class="botao">
         <
       </button>
-      <button (click)="nextImage()" class="botao">
+      <button (click)="nextImageBtn()" class="botao">
         >
       </button>
     </div>
     <div class="grupoMini">
       <div class="paineis">
-        <button (click)="changeCurrentImageUrl(0)" class="painel">
-            <img src="../../../assets/imgs/image1.jpg" alt="...">
+        <button 
+          (click)="changeCurrentImageUrl(0)" 
+          [ngClass]="{'painel-destaque': currentIndex === 0}" 
+          class="painel">
+          <img [src]="getImageUrl(0)" alt="...">
         </button>
-        <button (click)="changeCurrentImageUrl(1)" class="painel">
-            <img src="../../../assets/imgs/image2.jpg" alt="...">
+        <button 
+          (click)="changeCurrentImageUrl(1)" 
+          [ngClass]="{'painel-destaque': currentIndex === 1}" 
+          class="painel">
+          <img [src]="getImageUrl(1)" alt="...">
         </button>
-        <button (click)="changeCurrentImageUrl(2)" class="painel">
-            <img src="../../../assets/imgs/image3.jpg" alt="...">
+        <button 
+          (click)="changeCurrentImageUrl(2)" 
+          [ngClass]="{'painel-destaque': currentIndex === 2}" 
+          class="painel">
+          <img [src]="getImageUrl(2)" alt="...">
         </button>
-        <button (click)="changeCurrentImageUrl(3)" class="painel">
-            <img src="../../../assets/imgs/image4.jpg" alt="...">
+        <button 
+          (click)="changeCurrentImageUrl(3)" 
+          [ngClass]="{'painel-destaque': currentIndex === 3}" 
+          class="painel">
+          <img [src]="getImageUrl(3)" alt="...">
         </button>
+      </div>      
     </div>
+
+    <div class="progressBarContainer">
+      <div class="progressBar" [ngStyle]="{ 'width': progress + '%' }"></div>
     </div>
     
   </div>
 
 </div>
-
-
-<!-- <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div> -->
