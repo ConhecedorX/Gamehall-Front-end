@@ -28,7 +28,7 @@ export class GrandePainelComponent {
     this.service.listarJogos().subscribe((data: GameModel[]) => {
       this.jogosPaineis = data;
 
-    this.jogosAcao = this.jogosPaineis.filter(jogo => jogo.genero === 'ACAO');
+    this.jogosAcao = this.jogosPaineis.filter(jogo => jogo.genero === 'AÇÃO');
     this.jogosLuta = this.jogosPaineis.filter(jogo => jogo.genero === 'LUTA');
     this.jogosRpg = this.jogosPaineis.filter(jogo => jogo.genero === 'RPG');
     this.jogosShooter = this.jogosPaineis.filter(jogo => jogo.genero === 'SHOOTER');

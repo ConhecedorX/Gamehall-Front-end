@@ -4,10 +4,11 @@ export interface GameModel {
     jogoEstudio: string
     jogoDistribuidora: string
     jogoDescricao: string
-    jogoPlataforma: string
+    plataforma: string
     genero: string
+    sub_genero: string
     jogoImagem: string
-    dataLancamento: Date
+    data: Date
     nota: number
 
 }

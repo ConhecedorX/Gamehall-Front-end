@@ -45,6 +45,7 @@
 .infoImagem {
     display: flex;
     flex-direction: column-reverse;
+    justify-content: space-between;
     height: 700px;
     width: 85%;
     background-size: cover;
@@ -57,10 +58,10 @@
     justify-content: space-between;
     align-content: flex-end;
     width: 100%;
-    height:100px;
+    height:115px;
     color: #F8F0E3;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #201b22b2;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
@@ -100,3 +101,39 @@
     width: 1830px;
     margin-top: 20px;
 }
+
+.plataforma {
+    position: relative;
+    display: flex;
+    align-self:flex-end;
+    align-items: center;
+    justify-content: center;
+    width: 450px; /* Largura da faixa */
+    height: 230px; /* Altura da faixa */
+    background-color: #201b22b2; /* Cor de fundo */
+    clip-path: polygon(50% 0, 100% 0, 100% 100%);
+    border-top-right-radius: 20px;
+    overflow: hidden; /* Para esconder partes fora da faixa */
+}
+
+.icons-container {
+    position: absolute;
+    top: 0px;
+    right: 0px; /* Ajusta os ícones para ficarem acima da faixa */
+    display: flex;
+    justify-content: center;
+    width: 100px;
+
+}
+
+.icons {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: 150px; /* Tamanho do ícone */
+    height: 150px;
+    padding-right:30px;
+    padding-top: 20px;
+}
+
+  

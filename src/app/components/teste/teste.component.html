@@ -8,14 +8,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" routerLink="/inicio" routerLinkActive="active">Início</a>
+            <a class="nav-link" routerLink="/inicio" routerLinkActive="active">Início</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/cadastro" routerLinkActive="active">Adicionar</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" routerLink="/jogo" routerLinkActive="active">Jogo</a>
-          </li>
+          </li> -->
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Filtros
@@ -28,10 +28,18 @@
             </ul>
           </li> -->
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Pesquise um jogo" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form class="d-flex" role="search" class="searchBar">
+          <input class="form-control me-2" type="search" placeholder="Pesquise um jogo..." name="pesquisaJogo" aria-label="Search" [(ngModel)]="jogoPesquisa" (input)="filtrarJogos()">
+          <div class="searchBox">
+              <ul *ngIf="jogosFiltrados.length > 0" class="dropdown">
+                <li *ngFor="let jogo of jogosFiltrados" (click)="navegar(jogo)" class="dropdown-item">
+                  <img [src]="jogo.jogoImagem"> {{ jogo.jogoNome }}
+                </li>
+              </ul>
+            </div>
+  
         </form>
+            <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
       </div>
     </div>
   </nav>

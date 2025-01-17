@@ -175,15 +175,19 @@
             </div>
 
             <div *ngIf="formErrorMessage" class="error">{{ formErrorMessage }}
-                <button type="button" (click)="closeErrorMessage()">x</button>
+                <button type="button" (click)="closeErrorMessage()" class="errorButton">x</button>
             </div>
             
             <div *ngIf="showSuccessMessage" class="overlay_success">
                 <div class="success_box">
+                  <div class="closeButton">
+                      <button type="button" (click)="closeMessage()" class="successClose">X</button>
+                  </div>
                   <h1>Cadastro realizado com sucesso!</h1>
-                  <button type="button" (click)="closeMessage()">OK</button>
-                  <button type="button" (click)="returnHome()">Página inicial</button>
-                  <button type="button" (click)="newGame()">Cadastrar novo jogo</button>
+                  <div class="buttons">
+                      <button type="button" (click)="returnHome()" class="successButton">Página inicial</button>
+                      <button type="button" (click)="newGame()" class="successButton">Cadastrar novo jogo</button>
+                  </div>
                 </div>
               </div>
 
